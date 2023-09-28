@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 const SingleProduct = () => {
   const [singleProduct, setSingleProduct] = useState();
   const params = useParams();
-  // console.log(params);
+  console.log(params);
   // Fetching Single products to render one product per click.
   useEffect(() => {
     const singleContainer = async () => {
