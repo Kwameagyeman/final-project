@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./products.css";
+
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
   //Make call to Products api to fetch products
@@ -20,15 +21,13 @@ const AllProducts = () => {
       <div className="container">
         {products.map((product) => {
           return (
-            <>
-              <div className="box" key={product.id}>
-                <div className="content">
-                  <h5>{product.title}</h5>
-                  <p>{product.price}</p>
-                </div>
-                <img src={product.image} alt="" />
+            <div className="box" key={product.id}>
+              <div className="content">
+                <h5>{product.title}</h5>
+                <p>{product.price}</p>
               </div>
-            </>
+              <img src={product.image} alt="" />
+            </div>
           );
         })}
       </div>

@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import { LoginUser } from "../api";
 import GetAllUsers from "./GetAllUsers";
 
-const AccountForm = () => {
+const AccountForm = ({ setToken }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -11,7 +12,14 @@ const AccountForm = () => {
     event.preventDefault();
     const auth = LoginUser;
     const data = await auth(username, password);
-    console.log(data);
+    console.log("data", data.tokens);
+    setToken(data.data.token);
+
+    if (data.token) {
+      Navigate("/");
+    } else {
+      return "Trouble logging in";
+    }
   };
 
   return (
