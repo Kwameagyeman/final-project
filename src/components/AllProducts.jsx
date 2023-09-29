@@ -1,9 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./products.css";
+import { useNavigate } from "react-router-dom";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
   //Make call to Products api to fetch products
   useEffect(() => {
     const fetchProducts = async () => {
@@ -17,7 +19,7 @@ const AllProducts = () => {
   }, []);
   return (
     <>
-      <h2>Fake API store</h2>
+      <h2>WELCOME TO SHOP</h2>
       <div className="container">
         {products.map((product) => {
           return (
@@ -26,6 +28,12 @@ const AllProducts = () => {
                 <h5>{product.title}</h5>
                 <p>{product.price}</p>
               </div>
+              <button
+                onClick={() => navigate(`/products/${product.id}`)}
+                className="btn"
+              >
+                Go to a single product
+              </button>
               <img src={product.image} alt="" />
             </div>
           );
