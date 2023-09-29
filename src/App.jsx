@@ -5,10 +5,12 @@ import GetAllUsers from "./components/GetAllUsers";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Carts from "./components/Carts";
+import GetAllCategories from "./components/GetAllCategories";
 
 import AllProducts from "./components/AllProducts";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import SingleProduct from "./components/SingleProduct";
 
 function App() {
   const [token, setToken] = useState(
@@ -25,16 +27,14 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<AllProducts />} />
-        <Route path="/carts" element={<Carts />} />
+        <Route path="/products/:id" element={<SingleProduct />} />
+
         <Route path="account" element={<AccountForm setToken={setToken} />} />
       </Routes>
-      <AllProducts />
-      <AccountForm />
-      <GetAllUsers />
     </div>
   );
 }
