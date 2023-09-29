@@ -31,6 +31,26 @@ export const LoginUser = async (username, password) => {
   }
 };
 
+// export const RegisterUser = async (username, password) => {
+//   try {
+//     const response = await fetch("https://fakestoreapi.com/auth/register", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({
+//         username,
+//         password,
+//       }),
+//     });
+//     const result = await response.json();
+//     // console.log("Register User------->", result);
+//     return result;
+//   } catch (error) {
+//     console.error("Trouble Signing up", error);
+//   }
+// };
+
 export const FetchAllProducts = async (id) => {
   try {
     const response = await fetch(`${BASE_URL}/products`);
