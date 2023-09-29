@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AccountForm from "./components/AccountForm";
+import SignUp from "./components/SignUp";
 import { LoginUser } from "./api";
 import GetAllUsers from "./components/GetAllUsers";
 import { Routes, Route } from "react-router-dom";
@@ -34,6 +35,7 @@ function App() {
         <Route path="/products/:id" element={<SingleProduct />} />
 
         <Route path="account" element={<AccountForm setToken={setToken} />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </div>
   );

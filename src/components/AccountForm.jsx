@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { LoginUser } from "../api";
 import GetAllUsers from "./GetAllUsers";
+import "./AccountForm.css";
 
 const AccountForm = ({ setToken }) => {
   const [username, setUsername] = useState("");
