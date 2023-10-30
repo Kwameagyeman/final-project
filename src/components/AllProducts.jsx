@@ -32,7 +32,7 @@ const AllProducts = () => {
                 onClick={() => navigate(`/products/${product.id}`)}
                 className="btn"
               >
-                Go to a single product
+                Add To Cart
               </button>
               <img src={product.image} alt="" />
             </div>

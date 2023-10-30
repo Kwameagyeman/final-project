@@ -36,6 +36,7 @@ function App() {
 
         <Route path="account" element={<AccountForm setToken={setToken} />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/cart" element={<Carts />} />
       </Routes>
     </div>
   );
